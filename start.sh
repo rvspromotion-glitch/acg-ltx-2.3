@@ -331,6 +331,9 @@ download "https://www.dropbox.com/scl/fi/2zdrq7oigym9x6jmys8iu/LTX2-i2v-SexyMove
 download "https://www.dropbox.com/scl/fi/vchflqd1j2twp31fizwbz/msltx-3fingering-step00005000_comfy.safetensors?rlkey=tqr9tgcuty4bjcn0l8onaz85g&st=uqp0m3vy&dl=1" \
   "${MODELS_DIR}/loras/LTX2-Fingering.safetensors" &
 
+download "https://www.dropbox.com/scl/fi/32fzp2u23xqgciywd8wb5/LTX2-i2v-OralSuite.safetensors?rlkey=o37lrst6l7ke8v3m3rcf86r8x&st=pku1w7pb&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-Oral_Suite.safetensors" &
+
 # Wait for all downloads
 wait
 echo "[models] Downloads completed!"
