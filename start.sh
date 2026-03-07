@@ -283,9 +283,6 @@ download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-dev
 download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled.safetensors" \
   "${MODELS_DIR}/checkpoints/ltx-2.3-22b-distilled-8s-cfg1.safetensors" &
 
-download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled.safetensors" \
-  "${MODELS_DIR}/checkpoints/ltx-2.3-22b-distilled-8s-cfg1.safetensors" &
-
 download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors" \
   "${MODELS_DIR}/latent_upscale_models/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors" &
 
@@ -294,6 +291,27 @@ download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial
 
 download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors" \
   "${MODELS_DIR}/latent_upscale_models/ltx-2.3-temporal-upscaler-x2-1.0.safetensors" &
+
+download "https://huggingface.co/Phr00t/LTX2-Rapid-Merges/resolve/main/nsfw/ltx-2-19b-phr00tmerge-nsfw-v6.safetensors" \
+  "${MODELS_DIR}/diffusion_models/ltx-2-19b-phr00tmerge-nsfw-v6.safetensors" &
+
+download "https://huggingface.co/Phr00t/LTX2-Rapid-Merges/resolve/main/LORAs/povnsfw-v3-complete.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2-povnsfw-v3-complete.safetensors" &
+
+download "https://huggingface.co/Comfy-Org/ltx-2/resolve/main/split_files/text_encoders/gemma_3_12B_it_fp8_scaled.safetensors" \
+  "${MODELS_DIR}/clip/gemma_3_12B_it_fp8_scaled.safetensors" &
+
+download "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/VAE/LTX2_audio_vae_bf16.safetensors" \
+  "${MODELS_DIR}/vae/LTX2_audio_vae_bf16.safetensors" &
+
+download "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/VAE/LTX2_video_vae_bf16.safetensors" \
+  "${MODELS_DIR}/vae/LTX2_video_vae_bf16.safetensors" &
+
+download "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/text_encoders/ltx-2-19b-embeddings_connector_dev_bf16.safetensors" \
+  "${MODELS_DIR}/clip/ltx-2-19b-embeddings_connector_dev_bf16.safetensors" &
+
+download "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/loras/ltx-2-19b-distilled-lora-resized_dynamic_fro095_avg_rank_242_bf16.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2-19b-distilled-lora-resized_dynamic_fro095_avg_rank_242_bf16.safetensors" &
 
 # Wait for all downloads
 wait
