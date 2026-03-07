@@ -165,6 +165,7 @@ mkdir -p \
   "${MODELS_DIR}/onnx" \
   "${MODELS_DIR}/unet" \
   "${MODELS_DIR}/upscale_models" \
+  "${MODELS_DIR}/latent_upscale_models" \
   "${MODELS_DIR}/vae" \
   "${MODELS_DIR}/vae/pixel_space"
 
@@ -243,15 +244,6 @@ echo "[nodes] All nodes ready!"
 # Download ALL models in parallel
 echo "[models] Downloading models (fully parallel)..."
 
-download "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors" \
-  "${MODELS_DIR}/diffusion_models/z_image_turbo_bf16.safetensors" &
-
-download "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors" \
-  "${MODELS_DIR}/vae/ae.safetensors" &
-
-download "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors" \
-  "${MODELS_DIR}/clip/qwen_3_4b.safetensors" &
-
 download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/1x-ITF-SkinDiffDetail-Lite-v1.pth" \
   "${MODELS_DIR}/upscale_models/1x-ITF-SkinDiffDetail-Lite-v1.pth" &
 
@@ -282,29 +274,26 @@ download "https://huggingface.co/onnx-community/yolov10m/resolve/main/onnx/model
 download "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors" \
   "${MODELS_DIR}/clip_vision/clip_vision_h.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.2_animate_14B_bf16.safetensors" \
-  "${MODELS_DIR}/diffusion_models/wan2.2_animate_14B_bf16.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled-lora-384.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2.3-22b-distilled-lora-384-8steps-cfg1.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors" \
-  "${MODELS_DIR}/diffusion_models/wan2.2_t2v_low_noise_14B_fp16.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-dev.safetensors" \
+  "${MODELS_DIR}/checkpoints/ltx-2.3-22b-dev.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors" \
-  "${MODELS_DIR}/diffusion_models/wan2.2_i2v_low_noise_14B_fp16.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled.safetensors" \
+  "${MODELS_DIR}/checkpoints/ltx-2.3-22b-distilled-8s-cfg1.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors" \
-  "${MODELS_DIR}/vae/wan_2.1_vae.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled.safetensors" \
+  "${MODELS_DIR}/checkpoints/ltx-2.3-22b-distilled-8s-cfg1.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors" \
-  "${MODELS_DIR}/clip/umt5_xxl_fp16.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors" \
+  "${MODELS_DIR}/latent_upscale_models/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_repackaged/resolve/main/split_files/loras/wan2.2_t2v_lightx2v_4steps_lora_v1.1_low_noise.safetensors" \
-  "${MODELS_DIR}/loras/wan2.2_t2v_lightx2v_4steps_lora_v1.1_low_noise.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.0.safetensors" \
+  "${MODELS_DIR}/latent_upscale_models/ltx-2.3-spatial-upscaler-x2-1.0.safetensors" &
 
-download "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors" \
-  "${MODELS_DIR}/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors" &
-
-download "https://huggingface.co/NSFW-API/NSFW_Wan_14b/resolve/main/nsfw_wan_14b_e15.safetensors" \
-  "${MODELS_DIR}/diffusion_models/nsfw_wan_14b_e15.safetensors" &
+download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors" \
+  "${MODELS_DIR}/latent_upscale_models/ltx-2.3-temporal-upscaler-x2-1.0.safetensors" &
 
 # Wait for all downloads
 wait
