@@ -313,6 +313,24 @@ download "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/text_encoders/lt
 download "https://huggingface.co/Kijai/LTXV2_comfy/resolve/main/loras/ltx-2-19b-distilled-lora-resized_dynamic_fro095_avg_rank_242_bf16.safetensors" \
   "${MODELS_DIR}/loras/ltx-2-19b-distilled-lora-resized_dynamic_fro095_avg_rank_242_bf16.safetensors" &
 
+download "https://www.dropbox.com/scl/fi/u5pnegfvlykkm08qlcf83/4zzl1ck1n-trigger-peglora-LTX2.safetensors?rlkey=4uowf62slb0arezblaminirqn&st=qksqnd9x&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-4zzl1ck1n-Peg-LoRa.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/u0539uevebbjyh7livvly/AssLovers_000015000-LTX2.safetensors?rlkey=a39y7j00p5r5d4t0d5fe6mni4&st=03bs6iin&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-Ass_Lovers.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/361eof5vxsv1gb5kr08zd/doggystyle_ltx_000004200.safetensors?rlkey=mgxd8chdptlu2mhzzcdlkh979&st=4vkcxzia&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-Doggystyle.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/723yl4op59mmeua7ykx64/LTX2-i2v-SexThrust.safetensors?rlkey=zucykynadmougd74swedvmnfd&st=ylrvpopa&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-Sex_Thrust.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/2zdrq7oigym9x6jmys8iu/LTX2-i2v-SexyMove.safetensors?rlkey=pugbht7u3wfk8kzdbxackmxc8&st=9ftal0rn&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-Sexy_Move.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/vchflqd1j2twp31fizwbz/msltx-3fingering-step00005000_comfy.safetensors?rlkey=tqr9tgcuty4bjcn0l8onaz85g&st=uqp0m3vy&dl=1" \
+  "${MODELS_DIR}/loras/LTX2-Fingering.safetensors" &
+
 # Wait for all downloads
 wait
 echo "[models] Downloads completed!"
