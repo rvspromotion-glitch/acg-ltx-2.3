@@ -333,6 +333,12 @@ download "https://www.dropbox.com/scl/fi/vchflqd1j2twp31fizwbz/msltx-3fingering-
 
 download "https://www.dropbox.com/scl/fi/32fzp2u23xqgciywd8wb5/LTX2-i2v-OralSuite.safetensors?rlkey=o37lrst6l7ke8v3m3rcf86r8x&st=pku1w7pb&dl=1" \
   "${MODELS_DIR}/loras/LTX2-Oral_Suite.safetensors" &
+  
+download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control/resolve/main/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors" &
+
+download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Motion-Track-Control/resolve/main/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" &
 
 # Wait for all downloads
 wait
