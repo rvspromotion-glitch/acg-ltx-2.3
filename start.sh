@@ -201,7 +201,8 @@ echo "[nodes] Cloning custom nodes (fully parallel)..."
     "ComfyUI-segment-anything-2:https://github.com/kijai/ComfyUI-segment-anything-2.git" \
     "comfyui-tensorops:https://github.com/un-seen/comfyui-tensorops.git" \
     "ComfyUI-NovaNoiser:https://github.com/Aloukik21/ComfyUI-NovaNoiser.git" \
-    "savezipi9:https://github.com/rvspromotion-glitch/savezipi9.git"
+    "savezipi9:https://github.com/rvspromotion-glitch/savezipi9.git" \
+    "qwen_vl:https://github.com/1038lab/ComfyUI-QwenVL.git"
   do
     name="${repo%%:*}"
     url="${repo#*:}"
@@ -240,6 +241,34 @@ for dir in "${REPO_CACHE}"/*; do
 done
 
 echo "[nodes] All nodes ready!"
+
+cat > "${CUSTOM_NODES}/qwen_vl/custom_models.json" <<'EOF'
+{
+  "hf_models": {
+    "Qwen3-VL-8B-Instruct-abliterated": {
+      "repo_id": "huihui-ai/Huihui-Qwen3-VL-8B-Instruct-abliterated",
+      "default": true,
+      "quantized": false,
+      "vram_requirement": {
+        "full": 12.0,
+        "8bit": 7.0,
+        "4bit": 4.5
+      }
+    },
+    "Qwen3-VL-32B-Instruct-abliterated": {
+      "repo_id": "huihui-ai/Huihui-Qwen3-VL-32B-Instruct-abliterated",
+      "default": false,
+      "quantized": false,
+      "vram_requirement": {
+        "full": 28.0,
+        "8bit": 14.0,
+        "4bit": 8.5
+      }
+    }
+  }
+}
+EOF
+echo "[config] QwenVL custom_models.json written"
 
 # Download ALL models in parallel
 echo "[models] Downloading models (fully parallel)..."
