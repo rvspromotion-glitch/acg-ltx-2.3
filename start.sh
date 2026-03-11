@@ -203,7 +203,8 @@ echo "[nodes] Cloning custom nodes (fully parallel)..."
     "ComfyUI-NovaNoiser:https://github.com/Aloukik21/ComfyUI-NovaNoiser.git" \
     "savezipi9:https://github.com/rvspromotion-glitch/savezipi9.git" \
     "qwen_vl:https://github.com/1038lab/ComfyUI-QwenVL.git" \
-    "LTX_nodes:https://github.com/Lightricks/ComfyUI-LTXVideo.git"
+    "LTX_nodes:https://github.com/Lightricks/ComfyUI-LTXVideo.git" \
+    "LTX2_easy_prompt:https://github.com/seanhan19911990-source/LTX2EasyPrompt-LD.git"
   do
     name="${repo%%:*}"
     url="${repo#*:}"
@@ -369,6 +370,9 @@ download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control/re
 
 download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Motion-Track-Control/resolve/main/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" \
   "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" &
+
+download "https://huggingface.co/city96/gemma-3-12b-it-abliterated-GGUF/resolve/main/gemma-3-12b-it-abliterated-Q8_0.gguf" \
+  "${MODELS_DIR}/clip/gemma-3-12b-it-abliterated-Q8_0.gguf" &  
 
 # Wait for all downloads
 wait
