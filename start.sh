@@ -202,7 +202,8 @@ echo "[nodes] Cloning custom nodes (fully parallel)..."
     "comfyui-tensorops:https://github.com/un-seen/comfyui-tensorops.git" \
     "ComfyUI-NovaNoiser:https://github.com/Aloukik21/ComfyUI-NovaNoiser.git" \
     "savezipi9:https://github.com/rvspromotion-glitch/savezipi9.git" \
-    "qwen_vl:https://github.com/1038lab/ComfyUI-QwenVL.git"
+    "qwen_vl:https://github.com/1038lab/ComfyUI-QwenVL.git" \
+    "LTX_nodes:https://github.com/Lightricks/ComfyUI-LTXVideo.git"
   do
     name="${repo%%:*}"
     url="${repo#*:}"
