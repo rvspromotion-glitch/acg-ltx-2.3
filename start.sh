@@ -371,7 +371,7 @@ download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control/re
 download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Motion-Track-Control/resolve/main/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" \
   "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" &
 
-download "https://huggingface.co/city96/gemma-3-12b-it-abliterated-GGUF/resolve/main/gemma-3-12b-it-abliterated-Q8_0.gguf" \
+download "https://huggingface.co/mlabonne/gemma-3-12b-it-abliterated-v2-GGUF/resolve/main/gemma-3-12b-it-abliterated-v2.q8_0.gguf" \
   "${MODELS_DIR}/clip/gemma-3-12b-it-abliterated-Q8_0.gguf" &  
 
 # Wait for all downloads
