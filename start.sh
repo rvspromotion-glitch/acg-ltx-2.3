@@ -142,6 +142,71 @@ download() {
   fi
 }
 
+civit_download() {
+  local url="$1"
+  local out="$2"
+  mkdir -p "$(dirname "$out")"
+
+  if [ -f "$out" ] && [ -s "$out" ]; then
+    echo "[civitai] exists: $out"
+    return 0
+  fi
+
+  echo "[civitai] downloading: $out"
+
+  if command -v aria2c >/dev/null 2>&1; then
+    # If we have a token, get the signed redirect URL first (R2 signed URLs fail with extra headers)
+    local download_url="$url"
+    if [ -n "${CIVITAI_TOKEN:-}" ]; then
+      echo "[civitai] Getting signed download URL..."
+      download_url=$(curl -sL -I -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+        -H "Authorization: Bearer ${CIVITAI_TOKEN}" \
+        "$url" | grep -i "^location:" | tail -1 | sed 's/^location: //i' | tr -d '\r\n')
+
+      if [ -z "$download_url" ]; then
+        echo "[civitai] Failed to get redirect URL, using original"
+        download_url="$url"
+      fi
+    fi
+
+    local aria_opts=(
+      -c -x 16 -s 16 -k 1M
+      --allow-overwrite=true
+      --file-allocation=none
+      --max-tries=10
+      --retry-wait=2
+      --connect-timeout=30
+      --timeout=60
+      --max-connection-per-server=16
+      --min-split-size=1M
+      --split=16
+      --stream-piece-selector=geom
+      --optimize-concurrent-downloads=true
+      --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+      -d "$(dirname "$out")" -o "$(basename "$out")"
+    )
+
+    aria2c "${aria_opts[@]}" "$download_url"
+  else
+    local header=()
+    if [ -n "${CIVITAI_TOKEN:-}" ]; then
+      header+=( -H "Authorization: Bearer ${CIVITAI_TOKEN}" )
+    fi
+
+    curl -L --fail --retry 10 --retry-delay 2 -C - \
+      -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+      "${header[@]}" \
+      -o "$out" "$url"
+  fi
+
+  # If we got HTML (login page), delete it so you dont think its a model
+  if command -v file >/dev/null 2>&1 && file "$out" | grep -qi "HTML"; then
+    echo "[civitai] ERROR: got HTML instead of model (token missing/invalid/gated). Removing $out"
+    rm -f "$out"
+    return 1
+  fi
+}
+
 safe_pip_install_req() {
   local req="$1"
   [ -f "$req" ] || return 0
@@ -278,23 +343,11 @@ echo "[config] QwenVL custom_models.json written"
 # Download ALL models in parallel
 echo "[models] Downloading models (fully parallel)..."
 
-download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/1x-ITF-SkinDiffDetail-Lite-v1.pth" \
-  "${MODELS_DIR}/upscale_models/1x-ITF-SkinDiffDetail-Lite-v1.pth" &
-
-download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/RealESRGAN_x4plus.pth" \
-  "${MODELS_DIR}/upscale_models/RealESRGAN_x4plus.pth" &
-
-download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x-UltraSharp.pth" \
-  "${MODELS_DIR}/upscale_models/4x-UltraSharp.pth" &
-
-download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x_foolhardy_Remacri.pth" \
-  "${MODELS_DIR}/upscale_models/4x_foolhardy_Remacri.pth" &
-
-download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x_NMKD-Superscale-SP_178000_G.pth" \
-  "${MODELS_DIR}/upscale_models/4x_NMKD-Superscale-SP_178000_G.pth" &
-
-download "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4xNomos8kDAT.pth" \
-  "${MODELS_DIR}/upscale_models/4xNomos8kDAT.pth" &
+download "https://huggingface.co/ai-toolkit/flux2_vae/resolve/main/ae.safetensors" \
+  "${MODELS_DIR}/vae/ae2.safetensors" &
+  
+download "https://huggingface.co/Comfy-Org/vae-text-encorder-for-flux-klein-9b/resolve/main/split_files/text_encoders/qwen_3_8b_fp4mixed.safetensors" \
+  "${MODELS_DIR}/clip/qwen_3_8b_fp4mixed.safetensors" &
 
 download "https://huggingface.co/Kijai/vitpose_comfy/resolve/main/onnx/vitpose_h_wholebody_model.onnx" \
   "${MODELS_DIR}/detection/vitpose_h_wholebody_model.onnx" &
@@ -376,6 +429,9 @@ download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Motion-Track-Con
 
 download "https://huggingface.co/mlabonne/gemma-3-12b-it-abliterated-v2-GGUF/resolve/main/gemma-3-12b-it-abliterated-v2.q8_0.gguf" \
   "${MODELS_DIR}/clip/gemma-3-12b-it-abliterated-Q8_0.gguf" &  
+
+civit_download "https://civitai.com/api/download/models/2658598?type=Model&format=SafeTensor&size=pruned&fp=fp8" \
+  "${MODELS_DIR}/checkpoints/2658598_fp8_pruned.safetensors" &
 
 # Wait for all downloads
 wait
