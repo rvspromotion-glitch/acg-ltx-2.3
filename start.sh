@@ -204,7 +204,10 @@ echo "[nodes] Cloning custom nodes (fully parallel)..."
     "savezipi9:https://github.com/rvspromotion-glitch/savezipi9.git" \
     "qwen_vl:https://github.com/1038lab/ComfyUI-QwenVL.git" \
     "LTX_nodes:https://github.com/Lightricks/ComfyUI-LTXVideo.git" \
-    "LTX2_easy_prompt:https://github.com/seanhan19911990-source/LTX2EasyPrompt-LD.git"
+    "LTX2_easy_prompt:https://github.com/seanhan19911990-source/LTX2EasyPrompt-LD.git" \
+    "Depth_Crafter:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git" \
+    "ComfyUI_Easy_Use:https://github.com/yolain/ComfyUI-Easy-Use.git" \
+    "ComfyMath:https://github.com/evanspearman/ComfyMath.git"
   do
     name="${repo%%:*}"
     url="${repo#*:}"
