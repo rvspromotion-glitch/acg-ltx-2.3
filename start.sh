@@ -334,6 +334,26 @@ cat > "${CUSTOM_NODES}/qwen_vl/custom_models.json" <<'EOF'
         "8bit": 14.0,
         "4bit": 8.5
       }
+    },
+    "Qwen2.5-VL-7B-Instruct-abliterated": {
+      "repo_id": "huihui-ai/Qwen2.5-VL-7B-Instruct-abliterated",
+      "default": false,
+      "quantized": false,
+      "vram_requirement": {
+        "full": 28.0,
+        "8bit": 14.0,
+        "4bit": 8.5
+      }
+    },
+    "Qwen2.5-VL-3B-Instruct-abliterated": {
+      "repo_id": "huihui-ai/Qwen2.5-VL-3B-Instruct-abliterated",
+      "default": false,
+      "quantized": false,
+      "vram_requirement": {
+        "full": 28.0,
+        "8bit": 14.0,
+        "4bit": 8.5
+      }
     }
   }
 }
