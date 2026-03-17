@@ -457,7 +457,7 @@ civit_download "https://civitai.com/api/download/models/2631758?type=Model&forma
   "${MODELS_DIR}/checkpoints/flux_klein_9b_true_bf16.safetensors" &
 
 civit_download "https://civitai.com/api/download/models/2677698?type=Model&format=SafeTensor" \
-  "${MODELS_DIR}/checkpoints/flux_klein_9b_nsfw_lora.safetensors" &
+  "${MODELS_DIR}/loras/flux_klein_9b_nsfw_lora.safetensors" &
 
 # Wait for all downloads
 wait
