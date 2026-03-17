@@ -453,6 +453,12 @@ download "https://huggingface.co/mlabonne/gemma-3-12b-it-abliterated-v2-GGUF/res
 civit_download "https://civitai.com/api/download/models/2658598?type=Model&format=SafeTensor&size=pruned&fp=fp8" \
   "${MODELS_DIR}/checkpoints/2658598_fp8_pruned.safetensors" &
 
+civit_download "https://civitai.com/api/download/models/2631758?type=Model&format=SafeTensor&size=pruned&fp=bf16" \
+  "${MODELS_DIR}/checkpoints/flux_klein_9b_true_bf16.safetensors" &
+
+civit_download "https://civitai.com/api/download/models/2677698?type=Model&format=SafeTensor" \
+  "${MODELS_DIR}/checkpoints/flux_klein_9b_nsfw_lora.safetensors" &
+
 # Wait for all downloads
 wait
 echo "[models] Downloads completed!"
