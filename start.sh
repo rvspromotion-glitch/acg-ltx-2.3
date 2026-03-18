@@ -452,12 +452,27 @@ download "https://huggingface.co/mlabonne/gemma-3-12b-it-abliterated-v2-GGUF/res
 
 civit_download "https://civitai.com/api/download/models/2658598?type=Model&format=SafeTensor&size=pruned&fp=fp8" \
   "${MODELS_DIR}/checkpoints/2658598_fp8_pruned.safetensors" &
-
 civit_download "https://civitai.com/api/download/models/2631758?type=Model&format=SafeTensor&size=pruned&fp=bf16" \
   "${MODELS_DIR}/checkpoints/flux_klein_9b_true_bf16.safetensors" &
-
 civit_download "https://civitai.com/api/download/models/2677698?type=Model&format=SafeTensor" \
   "${MODELS_DIR}/loras/flux_klein_9b_nsfw_lora.safetensors" &
+civit_download "https://civitai.com/api/download/models/2695876?type=Model&format=SafeTensor" \
+  "${MODELS_DIR}/loras/flux_klein_SNOFS(sex).safetensors" &
+civit_download "https://civitai.com/api/download/models/2747325?type=Model&format=SafeTensor" \
+  "${MODELS_DIR}/loras/flux_klein_nsfw_selfie.safetensors" &
+civit_download "https://civitai.com/api/download/models/2702716?type=Model&format=SafeTensor" \
+  "${MODELS_DIR}/loras/flux_klein_K4_Play.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/bpy59kx1rifja25fgu8wk/klein-deepthroat-15epoc-k3nk.safetensors?rlkey=nc17yccdhd5re0v2wabstzgny&st=idy6nn3v&dl=1" \
+  "${MODELS_DIR}/loras/klein-deepthroat.safetensors" &
+download "https://www.dropbox.com/scl/fi/90y60t9sxlut79ji5mg0r/klein-missionary-pov-13epoc-k3nk.safetensors?rlkey=t6mj9kbef3t3szuruorkx3ajh&st=wgzs6jd3&dl=1" \
+  "${MODELS_DIR}/loras/klein-missionary-pov.safetensors" &
+download "https://www.dropbox.com/scl/fi/09771xuqruwy6d8yol29w/SelfFisting_Anal_v1.safetensors?rlkey=qaqii1gvdfr99m2s2qhtbp6ox&st=mwoek47d&dl=1" \
+  "${MODELS_DIR}/loras/klein-SelfFisting_Anal_v1.safetensors" &
+download "https://www.dropbox.com/scl/fi/wpczdlrftcwujkl80nulr/SelfFisting_Vaginal_v1.safetensors?rlkey=6nqgjmd1emfqenbwydyv0n4xn&st=cod9hlgn&dl=1" \
+  "${MODELS_DIR}/loras/klein-SelfFisting_Vaginal_v1.safetensors" &
+download "https://www.dropbox.com/scl/fi/chhfxe0aeg81mykvp62vk/SEXGOD_FemaleMasturbation_Klein9b_v1.safetensors?rlkey=86lsezwjnwb05zdw5cmig75bt&st=gtrd5gmr&dl=1" \
+  "${MODELS_DIR}/loras/klein-Female_Masturbation.safetensors" &  
 
 # Wait for all downloads
 wait
