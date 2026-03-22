@@ -444,6 +444,12 @@ download "https://www.dropbox.com/scl/fi/32fzp2u23xqgciywd8wb5/LTX2-i2v-OralSuit
 download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control/resolve/main/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors" \
   "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors" &
 
+download "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap-Video/resolve/main/ltx-2.3/head_swap_v3_rank_64.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2.3-head_swap_v3_rank_64.safetensors" &
+
+download "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap-Video/resolve/main/ltx-2.3/head_swap_v3_rank_adaptive_fro_098.safetensors" \
+  "${MODELS_DIR}/loras/ltx-2.3-head_swap_v3_rank_adaptive_fro_098.safetensors" &
+
 download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Motion-Track-Control/resolve/main/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" \
   "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-motion-track-control-ref0.5.safetensors" &
 
