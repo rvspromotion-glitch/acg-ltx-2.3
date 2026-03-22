@@ -272,7 +272,9 @@ echo "[nodes] Cloning custom nodes (fully parallel)..."
     "LTX2_easy_prompt:https://github.com/seanhan19911990-source/LTX2EasyPrompt-LD.git" \
     "Depth_Crafter:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git" \
     "ComfyUI_Easy_Use:https://github.com/yolain/ComfyUI-Easy-Use.git" \
-    "ComfyMath:https://github.com/evanspearman/ComfyMath.git"
+    "ComfyMath:https://github.com/evanspearman/ComfyMath.git" \
+    "LTX2.3_BFS:https://github.com/alisson-anjos/ComfyUI-BFSNodes.git"
+    
   do
     name="${repo%%:*}"
     url="${repo#*:}"
