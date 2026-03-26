@@ -473,6 +473,8 @@ civit_download "https://civitai.com/api/download/models/2747325?type=Model&forma
   "${MODELS_DIR}/loras/flux_klein_nsfw_selfie.safetensors" &
 civit_download "https://civitai.com/api/download/models/2702716?type=Model&format=SafeTensor" \
   "${MODELS_DIR}/loras/flux_klein_K4_Play.safetensors" &
+civit_download "https://civitai.com/api/download/models/2752410?type=Model&format=SafeTensor&size=full&fp=fp8" \
+  "${MODELS_DIR}/checkpoints/LTX2.3_Amateur_Real_Video_fp8.safetensors" &
 
 download "https://www.dropbox.com/scl/fi/bpy59kx1rifja25fgu8wk/klein-deepthroat-15epoc-k3nk.safetensors?rlkey=nc17yccdhd5re0v2wabstzgny&st=idy6nn3v&dl=1" \
   "${MODELS_DIR}/loras/klein-deepthroat.safetensors" &
