@@ -442,6 +442,21 @@ download "https://www.dropbox.com/scl/fi/vchflqd1j2twp31fizwbz/msltx-3fingering-
 
 download "https://www.dropbox.com/scl/fi/32fzp2u23xqgciywd8wb5/LTX2-i2v-OralSuite.safetensors?rlkey=o37lrst6l7ke8v3m3rcf86r8x&st=pku1w7pb&dl=1" \
   "${MODELS_DIR}/loras/LTX2-Oral_Suite.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/bgoxrg2tnn4nt0dj46v03/SynthPussy_01_rank32.safetensors?rlkey=tiafsobbms9znik57rn42agfa&st=rj46ap8y&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-Pussy-LoRa.safetensors" &  
+
+download "https://www.dropbox.com/scl/fi/v8jkxhi7e60x1fv1zydqz/BreastMassage_LTX23.safetensors?rlkey=4vm0uikgg81lrtq1q8nqyowt3&st=nncx6hoh&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-Breastmassage.safetensors" &  
+
+download "https://www.dropbox.com/scl/fi/dg8sixjux29db4afpzpdo/LTX-2.3-Dildo-Ride.safetensors?rlkey=y1v58mmobxrw0emoxqhvlgnsb&st=dv0f325f&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-DildoRide.safetensors" &  
+
+download "https://www.dropbox.com/scl/fi/4iam0x3qfqg7u7bq7ucuv/LTX2_3_NSFW_multipurpose.safetensors?rlkey=0h35126yi3t86wi0rzfxdfe4l&st=vri0t1ab&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-NSFW-Multipurpose.safetensors" &  
+
+download "https://www.dropbox.com/scl/fi/doazyrsecs0w8fu7uqlfw/2ltsway-breastsway.safetensors?rlkey=uwjsg3jp2t647hc1tg0ytmv0n&st=mwg3dc1b&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-BreastSway.safetensors" &  
   
 download "https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Union-Control/resolve/main/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors" \
   "${MODELS_DIR}/loras/ltx-2.3-22b-ic-lora-union-control-ref0.5.safetensors" &
