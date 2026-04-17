@@ -401,8 +401,8 @@ download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial
 download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors" \
   "${MODELS_DIR}/latent_upscale_models/ltx-2.3-temporal-upscaler-x2-1.0.safetensors" &
 
-download "https://huggingface.co/Phr00t/LTX2-Rapid-Merges/resolve/main/nsfw/ltx-2-19b-phr00tmerge-nsfw-v6.safetensors" \
-  "${MODELS_DIR}/diffusion_models/ltx-2-19b-phr00tmerge-nsfw-v6.safetensors" &
+download "https://huggingface.co/Alissonerdx/LTX-LoRAs/resolve/main/ltx23_inpaint_masked_r2v_rank32_v1_3000steps.safetensors" \
+  "${MODELS_DIR}/loras/ltx23_inpaint_masked_r2v_rank32_v1_3000steps.safetensors" &
 
 download "https://huggingface.co/Phr00t/LTX2-Rapid-Merges/resolve/main/LORAs/povnsfw-v3-complete.safetensors" \
   "${MODELS_DIR}/loras/ltx-2-povnsfw-v3-complete.safetensors" &
