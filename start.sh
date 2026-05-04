@@ -273,7 +273,8 @@ echo "[nodes] Cloning custom nodes (fully parallel)..."
     "Depth_Crafter:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git" \
     "ComfyUI_Easy_Use:https://github.com/yolain/ComfyUI-Easy-Use.git" \
     "ComfyMath:https://github.com/evanspearman/ComfyMath.git" \
-    "LTX2.3_BFS:https://github.com/alisson-anjos/ComfyUI-BFSNodes.git"
+    "LTX2.3_BFS:https://github.com/alisson-anjos/ComfyUI-BFSNodes.git" \
+    "SAM3:https://github.com/PozzettiAndrea/ComfyUI-SAM3.git"
     
   do
     name="${repo%%:*}"
@@ -382,6 +383,9 @@ download "https://huggingface.co/onnx-community/yolov10m/resolve/main/onnx/model
 
 download "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors" \
   "${MODELS_DIR}/clip_vision/clip_vision_h.safetensors" &
+
+download "https://huggingface.co/1038lab/sam3/resolve/main/sam3.pt" \
+  "${MODELS_DIR}/models/sam3/sam3.pt" &
 
 download "https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-22b-distilled-lora-384.safetensors" \
   "${MODELS_DIR}/loras/ltx-2.3-22b-distilled-lora-384-8steps-cfg1.safetensors" &
