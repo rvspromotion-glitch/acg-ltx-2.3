@@ -509,6 +509,12 @@ download "https://www.dropbox.com/scl/fi/chhfxe0aeg81mykvp62vk/SEXGOD_FemaleMast
 download "https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/sulphur_dev_bf16.safetensors" \
   "${MODELS_DIR}/checkpoints/sulphur_dev_bf16.safetensors" &
 
+download "https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/sulphur_distil_bf16.safetensors" \
+  "${MODELS_DIR}/checkpoints/sulphur_distil_bf16.safetensors" &
+
+download "https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/sulphur_lora_rank_768.safetensors" \
+  "${MODELS_DIR}/loras/sulphur_lora_rank_768.safetensors" &
+
 download "https://www.dropbox.com/scl/fi/e7ftrp7csngq1sazrswio/petite_selfie_ltx23_v1.safetensors?rlkey=xfjt0bm6ho7w9a10m1db2dxma&st=s98imraz&dl=1" \
   "${MODELS_DIR}/loras/LTX2.3-petite_selfie_v1.safetensors" &
 
