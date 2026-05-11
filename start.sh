@@ -504,7 +504,22 @@ download "https://www.dropbox.com/scl/fi/09771xuqruwy6d8yol29w/SelfFisting_Anal_
 download "https://www.dropbox.com/scl/fi/wpczdlrftcwujkl80nulr/SelfFisting_Vaginal_v1.safetensors?rlkey=6nqgjmd1emfqenbwydyv0n4xn&st=cod9hlgn&dl=1" \
   "${MODELS_DIR}/loras/klein-SelfFisting_Vaginal_v1.safetensors" &
 download "https://www.dropbox.com/scl/fi/chhfxe0aeg81mykvp62vk/SEXGOD_FemaleMasturbation_Klein9b_v1.safetensors?rlkey=86lsezwjnwb05zdw5cmig75bt&st=gtrd5gmr&dl=1" \
-  "${MODELS_DIR}/loras/klein-Female_Masturbation.safetensors" &  
+  "${MODELS_DIR}/loras/klein-Female_Masturbation.safetensors" &
+
+download "https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/sulphur_dev_bf16.safetensors" \
+  "${MODELS_DIR}/checkpoints/sulphur_dev_bf16.safetensors" &
+
+download "https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/sulphur_distil_bf16.safetensors" \
+  "${MODELS_DIR}/checkpoints/sulphur_distil_bf16.safetensors" &
+
+download "https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/sulphur_lora_rank_768.safetensors" \
+  "${MODELS_DIR}/loras/sulphur_lora_rank_768.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/e7ftrp7csngq1sazrswio/petite_selfie_ltx23_v1.safetensors?rlkey=xfjt0bm6ho7w9a10m1db2dxma&st=s98imraz&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-petite_selfie_v1.safetensors" &
+
+download "https://www.dropbox.com/scl/fi/33ka3n5m5toa90qowcj7u/SexGod_FingeringDildo_LTX23_v1.safetensors?rlkey=r2g6nap4er3qk9xwwk38a850f&st=jr3zqxg7&dl=1" \
+  "${MODELS_DIR}/loras/LTX2.3-SexGod_FingeringDildo_v1.safetensors" &
 
 # Wait for all downloads
 wait
